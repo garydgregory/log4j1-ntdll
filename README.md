@@ -85,9 +85,15 @@ The `msbuild-all` script builds the DLLs.
 
 To install files you've built locally, run `install-all`.
 
+## Deploying a snapshot
+
+Run `deploy-all-snapshots`.
+
 ## Releasing
 
-* Create a Git branch for the version you want to release, for example 1.0.0
+* Edit version.txt 
 * Run `ms-build-all`
-* Run `deploy-all 1.0.0`
+* Run `deploy-all-staging`
+* Verify what is on Nexus
+* Release from Nexus
 
