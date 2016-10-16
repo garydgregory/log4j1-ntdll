@@ -27,5 +27,5 @@ if exist "%PATH%" call "%MAVEN_HOME%\bin\mvn.cmd" install:install-file ^
   -Dversion=%1 ^
   -Dpackaging=dll ^
   -DgeneratePom=true ^
-  -DgeneratePom.description="The Apache Log4j 1.2 Windows NTEventLogAppender DLLs." ^
+  -DgeneratePom.description="The Apache Log4j 1.2 Windows NTEventLogAppender DLLs."
 endlocal
