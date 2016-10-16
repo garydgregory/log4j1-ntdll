@@ -20,14 +20,15 @@ setlocal
 set BASE=NTEventLogAppender.%2
 set FILE=%BASE%.dll
 set PATH=target/%FILE%
+set POM2=target\pom-%2.xml
+%windir%\system32\WindowsPowerShell\v1.0\powershell -Command "(gc pom.xml) -replace 'log4j1-ntdll', '%BASE%' | Out-File %POM2%"
 if exist "%PATH%" call "%MAVEN_HOME%\bin\mvn.cmd" deploy:deploy-file ^
   -Dfile=%PATH% ^
   -DgroupId=com.garygregory.log4j1 ^
   -DartifactId=%BASE% ^
   -Dversion=%1 ^
   -Dpackaging=dll ^
-  -DgeneratePom=true ^
-  -DgeneratePom.description="The Apache Log4j 1.2 Windows NTEventLogAppender DLLs." ^
   -DrepositoryId=%3 ^
-  -Durl=%4
+  -Durl=%4 ^
+  -DpomFile=%POM2%"
 endlocal

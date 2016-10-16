@@ -19,13 +19,11 @@
 setlocal
 set /p VERSION=<version.txt
 set SNAPSHOT_VERSION=%VERSION%-SNAPSHOT
-set REPO_ID=sonatype.snapshots
-set REPO_URL=https://oss.sonatype.org/content/repositories/snapshots
-call deploy-arch %SNAPSHOT_VERSION% x86       %REPO_ID% %REPO_URL%
-call deploy-arch %SNAPSHOT_VERSION% amd64     %REPO_ID% %REPO_URL%
-call deploy-arch %SNAPSHOT_VERSION% arm       %REPO_ID% %REPO_URL%
-call deploy-arch %SNAPSHOT_VERSION% x86_arm   %REPO_ID% %REPO_URL%
-call deploy-arch %SNAPSHOT_VERSION% x86_amd64 %REPO_ID% %REPO_URL%
-call deploy-arch %SNAPSHOT_VERSION% amd64_x86 %REPO_ID% %REPO_URL%
-call deploy-arch %SNAPSHOT_VERSION% amd64_arm %REPO_ID% %REPO_URL%
+call install-arch %SNAPSHOT_VERSION% x86
+call install-arch %SNAPSHOT_VERSION% amd64
+call install-arch %SNAPSHOT_VERSION% arm
+call install-arch %SNAPSHOT_VERSION% x86_arm
+call install-arch %SNAPSHOT_VERSION% x86_amd64
+call install-arch %SNAPSHOT_VERSION% amd64_x86
+call install-arch %SNAPSHOT_VERSION% amd64_arm
 endlocal
