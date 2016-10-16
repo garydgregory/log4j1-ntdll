@@ -22,6 +22,14 @@ The project provides the following files:
 * `NTEventLogAppender.x86_amd64.dll`
 * `NTEventLogAppender.x86.dll`
 
+## Integrating a DLL into your application
+By default build tools like Apache Maven include the artifact version into the
+file name it downloads. Log4j 1 on the other hand, MUST not have the version in 
+the file name. You Maven build must handle this discrepancy.
+
+If you use Apache Ivy, you have control over file names and can skip using the 
+version in the file name Ivy creates. 
+
 ## NTEventLogAppender.amd64_x86.dll
 
 ```xml
@@ -66,6 +74,10 @@ The project provides the following files:
 </dependency>
 ```
 
+## Release History
+
+* 2016-10-15 Version 1.0.
+ 
 ## Building DLLs
 The current build uses Microsoft tools. A patch to build with MinGW would be appreciated.
 

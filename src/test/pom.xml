@@ -1,0 +1,23 @@
+<project>
+  <modelVersion>4.0.0</modelVersion>
+  <groupId>com.mycompany.app</groupId>
+  <artifactId>my-app</artifactId>
+  <version>1</version>
+
+  <dependencies>
+    <dependency>
+      <groupId>com.garygregory.log4j1</groupId>
+      <artifactId>NTEventLogAppender.x86</artifactId>
+      <version>1.0.0-SNAPSHOT</version>
+      <type>dll</type>
+    </dependency>
+  </dependencies>
+
+  <repositories>
+    <repository>
+      <id>sonatype.snapshots</id>
+      <url>https://oss.sonatype.org/content/repositories/snapshots</url>
+    </repository>
+  </repositories>
+  
+</project>
