@@ -21,7 +21,7 @@ set BASE=NTEventLogAppender.%2
 set FILE=%BASE%.dll
 set PATH=target/%FILE%
 set POM2=target\pom-%2.xml
-%windir%\system32\WindowsPowerShell\v1.0\powershell -Command "(gc pom.xml) -replace 'log4j1-ntdll', '%BASE%' | Out-File %POM2%"
+"%windir%\system32\WindowsPowerShell\v1.0\powershell" -Command "(gc pom.xml) -replace '<artifactId>log4j1-ntdll</artifactId>', '<artifactId>%BASE%</artifactId>' -replace '<name>log4j1-ntdll</name>', '<name>%BASE%</name>' | Out-File %POM2%"
 if exist "%PATH%" call "%MAVEN_HOME%\bin\mvn.cmd" deploy:deploy-file ^
   -Dfile=%PATH% ^
   -DgroupId=com.garygregory.log4j1 ^
