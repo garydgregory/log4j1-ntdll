@@ -76,7 +76,7 @@ version in the file name Ivy creates.
 
 ## Release History
 
-* 2016-10-15 Version 1.0.
+* 2016-10-16 Version 1.0.
  
 ## Building DLLs
 The current build uses Microsoft tools. A patch to build with MinGW would be appreciated.
