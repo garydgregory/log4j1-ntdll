@@ -76,7 +76,14 @@ version in the file name Ivy creates.
 
 ## Release History
 
-* 2016-10-16 Version 1.0.
+### 2016-10-16 Version 1.0.
+
+File | SHA1 | MD5
+-----| ---- | ---
+`NTEventLogAppender.amd64.dll` | `4bef2c1c958d4c29c14c647508a9c023c28039c2` | `80aa15b85848fee0764a7a24d4bc5a66`
+`NTEventLogAppender.amd64_x86.dll` | `a62d1a97d05847f3586017780b45267a0652b70b` | `fb621f9cbc30ac331cc39d6e44bdd00e`
+`NTEventLogAppender.x86.dll` |  `42d73a6374fb37b17827551e873e1d33eb43140d` | `c70463dca62c74dfe294574769b843ac`
+`NTEventLogAppender.x86_amd64.dll` | `40b0fe058f20c241db52bc5a32b55d142ccda4e0` | `0d14689c37bffa9a71ecee3e3ebb3350`
  
 ## Building DLLs
 The current build uses Microsoft tools. A patch to build with MinGW would be appreciated.
