@@ -1,0 +1,5 @@
+Gary Gregory log4j1-ntdll 
+Copyright 2016 Gary Gregory
+
+This product includes software developed at
+The Apache Software Foundation (http://www.apache.org/).
