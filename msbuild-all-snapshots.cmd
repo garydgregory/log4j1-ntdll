@@ -17,9 +17,9 @@
 @REM under the License.
 @REM ----------------------------------------------------------------------------
 setlocal
+del /Q target\*.*
 set /P VERSION=<version.txt
 set SNAPSHOT_VERSION=%VERSION%-SNAPSHOT
-set REPO_ID=sonatype.snapshots
-set REPO_URL=https://oss.sonatype.org/content/repositories/snapshots
-FOR /F %%A IN (archs.txt) DO call deploy-arch %SNAPSHOT_VERSION% %%A %REPO_ID% %REPO_URL%
+call "%MAVEN_HOME%\bin\mvn.cmd" javadoc:jar source:jar
+FOR /F %%A IN (archs.txt) DO call msbuild-arch %SNAPSHOT_VERSION% %%A
 endlocal

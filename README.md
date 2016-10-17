@@ -76,7 +76,10 @@ version in the file name Ivy creates.
 
 ## Release History
 
-### 2016-10-16 Version 1.0.
+### 2016-10-16 Version 1.0.0-SNAPSHOT
+First SNAPSHOT builds.
+
+TODO ### 2016-10-dd Version 1.0
 
 File | SHA1 | MD5
 -----| ---- | ---
@@ -98,9 +101,19 @@ Run `deploy-all-snapshots`.
 
 ## Releasing
 
-* Edit version.txt 
-* Run `ms-build-all`
-* Run `deploy-all-staging`
-* Verify what is on Nexus
+* Edit `pom.xml` and remove SNAPSHOT. 
+* Edit `version.txt` (never contains a SNAPSHOT, only a plain version like 1.0.0).
+* Run `mvn apache-rat:check` and check the results.
+* Run `ms-build-all` and check the results.
+* Run `install-all-snapshot` and check the results.
+* Run `install-all-staging` and check the results.
+* Run `deploy-all-snapshot` and check the results.
+* Run `deploy-all-staging` and check the results.
 * Release from Nexus
+* Edit `pom.xml` and add SNAPSHOT. 
 
+## TODO
+
+* Compiling Desktop applications for the ARM platform is not supported.
+
+-EOF-

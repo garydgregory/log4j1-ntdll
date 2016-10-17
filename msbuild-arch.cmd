@@ -16,10 +16,12 @@
 @REM specific language governing permissions and limitations
 @REM under the License.
 @REM ----------------------------------------------------------------------------
-@echo === BUILDING ARCH %1 ===
+@echo === BUILDING ARCH %2 FOR VERSION %1 ===
 setlocal
 mkdir target
-call "C:\Program Files (x86)\Microsoft Visual Studio 14.0\VC\vcvarsall.bat" %1
+call "%ProgramFiles(x86)%\Microsoft Visual Studio 14.0\VC\vcvarsall.bat" %2
 call ant -f src/main/ntdll/build.xml -Dclasses.dir=target/classes clean msbuild
-copy /Y src\main\ntdll\target\NTEventLogAppender.dll target\NTEventLogAppender.%1.dll 
+copy /Y src\main\ntdll\target\NTEventLogAppender.dll target\NTEventLogAppender.%2.dll
+copy /Y target\log4j1-ntdll-%1-javadoc.jar target\NTEventLogAppender.%2-%1-javadoc.jar 
+copy /Y target\log4j1-ntdll-%1-sources.jar target\NTEventLogAppender.%2-%1-sources.jar 
 endlocal

@@ -1,0 +1,7 @@
+arm 
+amd64 
+amd64_arm
+amd64_x86 
+x86 
+x86_amd64 
+x86_arm 

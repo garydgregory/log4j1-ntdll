@@ -17,12 +17,6 @@
 @REM under the License.
 @REM ----------------------------------------------------------------------------
 setlocal
-set /p VERSION=<version.txt
-call install-arch %VERSION% x86
-call install-arch %VERSION% amd64
-call install-arch %VERSION% arm
-call install-arch %VERSION% x86_arm
-call install-arch %VERSION% x86_amd64
-call install-arch %VERSION% amd64_x86
-call install-arch %VERSION% amd64_arm
+set /P VERSION=<version.txt
+FOR /F %%A IN (archs.txt) DO call install-arch %VERSION% %%A
 endlocal
